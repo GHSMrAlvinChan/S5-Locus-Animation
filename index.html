@@ -152,7 +152,7 @@
             ctx.lineWidth = 3; ctx.lineCap = "round";
             
             if (type === 'parabola') {
-                desc.innerText = "Locus: Parabola opening upwards. Distance PS equals distance PL.";
+                desc.innerText = "Locus: Parabola";
                 const p = 50, vY = centerY + 50; 
                 const focusY = vY - p, directrixY = vY + p;
                 
@@ -186,7 +186,7 @@
                 drawPoint(px, py, "P", "#e74c3c", true);
             }
             else if (type === 'angle_bisector') {
-                desc.innerText = "Locus: Perpendicular angle bisectors stretched to canvas edges.";
+                desc.innerText = "Locus: A pair of angle bisectors";
                 ctx.strokeStyle = "#2c3e50"; ctx.lineWidth = 2;
                 // Fixed: Intersecting lines now extend to canvas boundaries (0-600 width)
                 ctx.beginPath(); ctx.moveTo(0, 50); ctx.lineTo(600, 350); ctx.stroke();
@@ -214,7 +214,7 @@
                 drawPerps(p1x, p1y, "P1", p1P > 0); drawPerps(p2x, p2y, "P2", p2P > 0);
             }
             else if (type === 'parallel_line') {
-                desc.innerText = "Locus: Two parallel lines at distance d. P1 leads P2.";
+                desc.innerText = "Locus: A pair of parallel lines";
                 const d = 70;
                 ctx.strokeStyle = "#2c3e50"; ctx.lineWidth = 2;
                 ctx.beginPath(); ctx.moveTo(0, centerY); ctx.lineTo(600, centerY); ctx.stroke();
@@ -233,7 +233,7 @@
                 }
             }
             else if (type === 'circle') {
-                desc.innerText = "Locus: A circle with center O. Distance OP is constant.";
+                desc.innerText = "Locus: A circle with center O and radius OP";
                 const r = 100; drawPoint(centerX, centerY, "O");
                 const curP = Math.min(1, progress);
                 ctx.strokeStyle = "#e74c3c"; ctx.beginPath(); ctx.arc(centerX, centerY, r, 0, Math.PI*2*curP); ctx.stroke();
@@ -242,7 +242,7 @@
                 ctx.setLineDash([]); drawPoint(px, py, "P", "#e74c3c", true);
             }
             else if (type === 'bisector') {
-                desc.innerText = "Locus: The perpendicular bisector of segment AB. PA = PB.";
+                desc.innerText = "Locus: The perpendicular bisector of segment AB";
                 const ax = centerX - 100, ay = centerY + 50, bx = centerX + 100, by = centerY - 50;
                 drawPoint(ax, ay, "A"); drawPoint(bx, by, "B");
                 ctx.setLineDash([4, 4]); ctx.strokeStyle = "#bdc3c7"; ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
@@ -256,7 +256,7 @@
                 ctx.setLineDash([]); drawPoint(px, py, "P", "#e74c3c", true);
             }
             else if (type === 'mid_parallel') {
-                desc.innerText = "Locus: Equidistant from two parallel lines.";
+                desc.innerText = "Locus: A line parallel to the two lines";
                 const offset = 60; ctx.strokeStyle = "#2c3e50"; ctx.lineWidth = 2;
                 ctx.beginPath(); ctx.moveTo(0, centerY-offset); ctx.lineTo(600, centerY-offset); ctx.stroke();
                 ctx.beginPath(); ctx.moveTo(0, centerY+offset); ctx.lineTo(600, centerY+offset); ctx.stroke();
